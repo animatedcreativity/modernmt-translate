@@ -1,0 +1,34 @@
+{
+  "name": "modernmt-translate",
+  "version": "0.0.1",
+  "description": "Text translations using ModernMT.",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "request": "^2.88.0",
+    "node-sanitize-options": "^0.0.6",
+    "jsdom": "^15.1.1",
+    "node-promise-wrapper": "^0.0.2",
+    "randomstring": "^1.1.5",
+    "pouchdb": "^7.0.0",
+    "pouchdb-find": "^7.0.0"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://github.com/animatedcreativity/modernmt-translate"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "modernmt",
+    "translate",
+    "language",
+    "cloud",
+    "translations",
+    "texts"
+  ]
+}
