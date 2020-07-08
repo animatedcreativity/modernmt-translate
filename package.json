@@ -1,6 +1,6 @@
 {
   "name": "modernmt-translate",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Text translations using ModernMT.",
   "main": "main.js",
   "scripts": {

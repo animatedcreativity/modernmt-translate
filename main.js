@@ -104,7 +104,7 @@ exports = module.exports = function(config) {
             if (config.server.use !== true) {
               var {error, result} = await mod.wrapper("result", mod.result(body));
               if (typeof result !== "undefined") {
-                result.translation = decodeURIComponent(result.translation);
+                result.translation = result.translation;
                 resolve(typeof result.translation !== "undefined" ? result.translation : text);
                 if (config.offline.use === true) await mod.wrapper("result", mod.db.save({text: text, from: fromCode, to: toCode, translation: (typeof result.translation !== "undefined" ? result.translation : text), time: new Date().getTime()}, config.offline.database));
               } else {
@@ -129,7 +129,7 @@ exports = module.exports = function(config) {
             }
           };
           if (config.server.use !== true) {
-            request.get({url: config.link + "/translate?source=" + fromCode + "&target=" + toCode + "&q=" + encodeURIComponent(text), headers: headers}, process);
+            request.get({url: config.link + "/translate?source=" + fromCode + "&target=" + toCode + "&q=" + text, headers: headers}, process);
           } else {
             request.post({url: config.server.link + "/translate", body: JSON.stringify({
               text: text,
