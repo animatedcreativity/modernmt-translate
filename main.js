@@ -104,6 +104,7 @@ exports = module.exports = function(config) {
             if (config.server.use !== true) {
               var {error, result} = await mod.wrapper("result", mod.result(body));
               if (typeof result !== "undefined") {
+                result.translation = decodeURIComponent(result.translation);
                 resolve(typeof result.translation !== "undefined" ? result.translation : text);
                 if (config.offline.use === true) await mod.wrapper("result", mod.db.save({text: text, from: fromCode, to: toCode, translation: (typeof result.translation !== "undefined" ? result.translation : text), time: new Date().getTime()}, config.offline.database));
               } else {
