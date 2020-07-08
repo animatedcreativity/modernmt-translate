@@ -34,7 +34,6 @@ exports = module.exports = function(config) {
           };
         }
         request.get({url: (config.server.use !== true ? config.link : config.server.link) + "/languages", headers: headers}, async function(error, response, body) {
-          console.log(response.status);
           if (config.server.use !== true) {
             var {error, result} = await mod.wrapper("result", mod.result(body));
             if (typeof result !== "undefined") {
